@@ -57,7 +57,7 @@ data "external" "delete_custom_image" {
   query = {
     custom_image_id      = "${module.f5_vnf_image.custom_image_id}"
     ibmcloud_endpoint    = "${var.ibmcloud_endpoint}"
-    ibmcloud_svc_api_key = "${local.apikey}"
+    ibmcloud_svc_api_key = "6ob7CwRoZBHnrz3JKZkF5wJ_JRsHaF2F1dxIV72-SMdq"
     region               = "${data.ibm_is_region.region.name}"
   }
 }
