@@ -16,6 +16,26 @@ variable "vnf_profile" {
   description = "The profile of compute CPU and memory resources to be used when provisioning F5-BIGIP VSI. To list available profiles, run `ibmcloud is instance-profiles`."
 }
 
+variable "resource_group" {
+  default     = "Default"
+  description = "The resource group to use. If unspecified, the account's default resource group is used."
+}
+
+variable "vpc_name" {
+  default     = ""
+  description = "The name of your VPC where F5-BIGIP VSI is to be provisioned."
+}
+
+variable "region" {
+  default     = "us-south"
+  description = "The VPC Region that you want your VPC, networks and the F5 virtual server to be provisioned in. To list available regions, run `ibmcloud is regions`."
+}
+
+variable "subnet_id"{
+  default = ""
+  description =" The id of the subnet where F5-BIGIP VSI to be provisioned."
+}
+
 variable "ssh_key_name" {
   default     = ""
   description = "The name of the public SSH key to be used when provisining F5-BIGIP VSI."

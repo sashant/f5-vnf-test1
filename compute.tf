@@ -1,6 +1,10 @@
 data "ibm_is_region" "region" {
   name = "${var.region}"
 }
+
+data "ibm_is_subnet" "f5_subnet1"{
+   identifier = "${var.subnet_id}"
+}
 data "ibm_resource_group" "rg" {
   name = "${var.resource_group}"
 }

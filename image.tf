@@ -6,6 +6,6 @@ module "f5_vnf_image" {
   vnf_cos_instance_id  = "3fae3104-d6cc-4c15-94db-2635e2cc50b9"
   vnf_vpc_image_name   = "f5-bigip-sashant-test1"
   vpc_name             = "sashant-vpc"
-  resource_group       = "Default"
-  region               = "us-south"
+  region               = "${data.ibm_is_region.region.name}"
+  resource_group_id    = "${data.ibm_resource_group.rg.id}"
 }
