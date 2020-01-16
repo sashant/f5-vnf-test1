@@ -1,3 +1,12 @@
+data "ibm_is_region" "region" {
+  name = "${var.region}"
+}
+data "ibm_resource_group" "rg" {
+  name = "${var.resource_group}"
+}
+data "ibm_is_vpc" "f5_vpc" {
+  name = "${var.vpc_name}"
+}
 data "ibm_is_zone" "zone" {
   name = "${var.zone}"
   region = "${data.ibm_is_region.region.name}"
@@ -42,7 +51,7 @@ data "external" "delete_custom_image" {
   program    = ["bash", "${path.module}/scripts/delete_custom_image.sh"]
 
   query = {
-    custom_image_id      = "${data.ibm_is_image.f5_custom_image.id}"
+    custom_image_id      = "${module.f5_vnf_image.custom_image_id}"
     ibmcloud_endpoint    = "${var.ibmcloud_endpoint}"
     ibmcloud_svc_api_key = "${local.apikey}"
     region               = "${data.ibm_is_region.region.name}"
