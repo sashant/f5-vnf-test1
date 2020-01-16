@@ -1,3 +1,7 @@
+data "ibm_is_zone" "zone" {
+  name = "${var.zone}"
+  region = "${data.ibm_is_region.region.name}"
+}
 
 data "ibm_is_ssh_key" "f5_ssh_pub_key" {
   name = "${var.ssh_key_name}"
