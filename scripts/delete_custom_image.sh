@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Exit if any of the intermediate steps fail
-set -e
+set -x
 
 ####
 ## USAGE: Called by bash when exiting on error.
