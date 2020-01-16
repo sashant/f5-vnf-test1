@@ -5,7 +5,7 @@ module "f5_vnf_image" {
   vnf_cos_image_url    = "cos://us-south/vnfimagesstage/BIGIP-15.0.1-0.0.11.qcow2"
   vnf_cos_instance_id  = "3fae3104-d6cc-4c15-94db-2635e2cc50b9"
   vnf_vpc_image_name   = "f5-bigip-sashant-test1"
-  vpc_name             = "sashant-vpc"
+  vpc_crn              = "${data.ibm_is_vpc.f5_vpc.resource_crn}"
   region               = "${data.ibm_is_region.region.name}"
   resource_group_id    = "${data.ibm_resource_group.rg.id}"
 }
